@@ -1,0 +1,4 @@
+Course: Docker Mastery: From Zero to Hero
+Channel: DGR Uploads
+Episode: 1
+Time: 00:00 mins
