@@ -12,3 +12,8 @@ Docker is a Platform that allows to al inside a Container
 - Packages code and all the dependencies
 - Application runs quickly and reliably
 - Container guarantees the application will work
+
+## Docker Work Flow
+
+- docker run -> Docker CLI -> Docker Daemon ->
+  Create and run container -> Container output
