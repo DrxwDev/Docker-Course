@@ -17,3 +17,11 @@ Docker is a Platform that allows to al inside a Container
 
 - docker run -> Docker CLI -> Docker Daemon ->
   Create and run container -> Container output
+
+## Creating a container
+
+- docker all flags then the image
+  - Example drn -d --name server -p 8000:80 nginx
+  - Example drn -d --name page -p 8000:80 -v localDir:containerDir nginx
+  - localDir -> local product directory
+  - containerDir -> where do you want to be in the container
