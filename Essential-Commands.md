@@ -6,6 +6,8 @@
 - docker images ls
 - docker container ls
 - docker volume
+- docker container logs
+- docker container inspect -> returns json info
 
 ## Flags
 
@@ -17,3 +19,4 @@
 --name Name a container
 --rm remove container after it exits
 --network connect container to a network
+-f -> dlo -f container ID -> show logs in real time
