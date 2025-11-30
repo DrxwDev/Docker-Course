@@ -9,6 +9,8 @@
 
 ## Flags
 
+-it Interactive shell
+-tty Allocates a pseudo-TTy, essentially giving us a proper terminal prompt
 -d Detached
 -e Environment Variable
 -p Port Binding
