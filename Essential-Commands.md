@@ -8,6 +8,7 @@
 - docker volume
 - docker container logs
 - docker container inspect -> returns json info
+- docker build -> Command to build the image
 
 ## Flags
 
@@ -20,3 +21,4 @@
 --rm remove container after it exits
 --network connect container to a network
 -f -> dlo -f container ID -> show logs in real time
+-docker build -t -> Name the image and give a tag
