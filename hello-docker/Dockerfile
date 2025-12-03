@@ -1,22 +1,23 @@
-# --- Build stage ---
-FROM golang:tip-alpine3.22 AS builder
+# === Build stage ===
+FROM golang:1.25-alpine AS builder
 
-# Set the working directory in the container
-WORKDIR /app
+WORKDIR /build
 
-# Copy the requirements file first (for better caching)
 COPY go.mod go.sum ./
+RUN go mod download
 
-# Copy the rest of the application code into the container
 COPY . .
 
-# Download the dependencies
-RUN go mod tidy && go build -v -o app .
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o app .
 
-# --- Runtime stage ---
-FROM alpine:3.22.1
+# === Runtime stage ===
+FROM gcr.io/distroless/static-debian12:nonroot AS runtime
 
-WORKDIR /app
-COPY --from=builder /app/app .
+WORKDIR /src
 
-CMD [ "./app" ]
+COPY --from=builder /build/app /src/app
+
+EXPOSE 8000
+
+USER nonroot:nonroot
+ENTRYPOINT [ "./app" ]
