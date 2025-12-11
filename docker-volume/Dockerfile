@@ -1,0 +1,7 @@
+FROM postgres:14-alpine
+
+ENV POSTGRES_USER=drxwdev
+ENV POSTGRES_PASSWORD=drxw
+ENV POSTGRES_DB=test-db
+
+EXPOSE 5432
